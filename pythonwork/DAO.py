@@ -21,7 +21,7 @@ def insertData(getModel: Type[model.model]) :
     
 
 def close_conn() :
-    conn.close()
+    get_db.close()
 
 
 
