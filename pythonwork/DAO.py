@@ -12,7 +12,7 @@ def insertData(getModel: Type[model.model]) :
     
     conn = get_db()
     curs = conn.cursor()
-    sql = "insert into model (title, price, link, data_type, fileName, imagePath) VALUES ("+ '\''+str(getModel.getTitle()) + '\''', '+ '\''+ str(getModel.getPrice())+'\'' + ', '+ '\''+str(getModel.getLink()) + '\''+', ' + '\''+ str(getModel.getType()) + '\''+', '+ '\''+str(getModel.getFileName())+'\''+', '+ '\''+str(getModel.filePath)+'\'' + ')'
+    sql = "insert into model (title, price, link, data_type, file_name, image_path) VALUES ("+ '\''+str(getModel.getTitle()) + '\''', '+ '\''+ str(getModel.getPrice())+'\'' + ', '+ '\''+str(getModel.getLink()) + '\''+', ' + '\''+ str(getModel.getType()) + '\''+', '+ '\''+str(getModel.getFileName())+'\''+', '+ '\''+str(getModel.filePath)+'\'' + ')'
     curs.execute(sql)
 
     

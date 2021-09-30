@@ -3,14 +3,14 @@ import naverCrawl
 
 app = Flask(__name__)
 
-@app.route('/get_data')
+@app.route('/get_data', methods=['POST'])
 def doCrawl():
     
-    query = request.args["query"]
-
-    
-    check = naverCrawl.doCrawling(query)
-    
+    params = request.get_json()
+    query = params['query']
+    print(query)
+    # check = naverCrawl.doCrawling(query)
+    check = 'true'
     return jsonify(check = check)
 
 if __name__ == '__main__':
