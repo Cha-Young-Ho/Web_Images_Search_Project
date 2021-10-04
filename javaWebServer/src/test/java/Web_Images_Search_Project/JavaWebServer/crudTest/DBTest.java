@@ -1,6 +1,7 @@
-package Web_Images_Search_Project.JavaWebServer;
+package Web_Images_Search_Project.JavaWebServer.crudTest;
 
 
+import Web_Images_Search_Project.JavaWebServer.CommunicatePython;
 import Web_Images_Search_Project.JavaWebServer.product.Product;
 import Web_Images_Search_Project.JavaWebServer.product.ProductService;
 import org.junit.jupiter.api.Assertions;
