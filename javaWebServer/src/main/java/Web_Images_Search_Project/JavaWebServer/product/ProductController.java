@@ -1,11 +1,12 @@
 package Web_Images_Search_Project.JavaWebServer.product;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.HashMap;
+import java.util.List;
 
 @RestController
 @Slf4j
@@ -18,18 +19,29 @@ public class ProductController {
 
     @GetMapping("/product")
     @ResponseBody
-    public HashMap<String, String> getProduct(@RequestParam(value = "query", required = false) String query){
+    public JsonifiedProductList getProduct(@RequestParam(value = "query", required = false) String query){
         //List<Product> list =  productService.findAll();
 
-       // log.info("list = {}", list.get(0).getTitle());
-        HashMap<String, String> map = new HashMap<>();
-        map.put("query", query);
+        JsonifiedProductList jsonifiedProductList = productService.findByDataType(query);
 
-        log.info("query = {}", query);
+        return jsonifiedProductList;
+    }
 
-        return map;
+    public String jsonify(List<Product> productList){
+
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonList = null;
+        try {
+            jsonList = mapper.writeValueAsString(productList.get(0));
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return jsonList;
+
+
     }
 
 
 
-};
+}

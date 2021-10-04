@@ -19,23 +19,24 @@ public class DBTest {
     ProductService productService;
 
 
-    @Test
-    public void getData(){
+//    @Test
+//    public void getData(){
+//
+//
+//        //given
+//        String query = "녹차";
+//
+//        List<Product> list = productService.findByDataType(query);
+//
+//        //when
+//
+//        if(list.isEmpty()){
+//            CommunicatePython communicatePython = new CommunicatePython();
+//            String result = communicatePython.createHttpRequestAndSend(query);
+//            Assertions.assertEquals("true", result);
+//        }else{
+//            Assertions.assertNotNull(list);
+//        }
+//    }
 
-        //given
-        String query = "녹차";
-
-        List<Product> list = productService.findByDataType(query);
-
-        //when
-
-        if(list.isEmpty()){
-            CommunicatePython communicatePython = new CommunicatePython();
-            String result = communicatePython.createHttpRequestAndSend(query);
-            Assertions.assertEquals("true", result);
-        }else{
-            Assertions.assertNotNull(list);
-        }
-    }
-
-};
+}

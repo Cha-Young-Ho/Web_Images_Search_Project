@@ -13,6 +13,11 @@ spring:
     url: jdbc:mysql://localhost:3306/crawl?serverTimezone=UTC&characterEncoding=UTF-8
     username: root
     password: 1234
+  http:
+    encoding:
+      charset:
+        utf-8 force: true
+
   jpa:
     open-in-view: true
     hibernate:
@@ -23,3 +28,5 @@ spring:
     show-sql: true
     properties:
       hibernate.format_sql: true
+
+
