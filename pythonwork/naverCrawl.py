@@ -52,7 +52,7 @@ def saveFile(imgSrc, searchModel):
         return '정보 없음'
       
     # filePath 설정
-    filePath = 'C:/Users/ckdud/pythonwork/imageFiles/' + searchModel
+    filePath = 'C:/Users/ckdud/pythonwork/imageFiles/' + searchModel + '/'
 
 
 
@@ -101,9 +101,9 @@ def getAndInsertData(itemList, searchModel) :
       getModel.setTitle(title)
       getModel.setPrice(price)
       getModel.setLink(link)
-      getModel.setType(searchModel)
-      getModel.setFileName(fileName)
-      getModel.setFilePath(filePath)
+      getModel.setDataType(searchModel)
+      getModel.setImageName(fileName)
+      getModel.setImagePath(filePath)
       DAO.insertData(getModel)
 
 
@@ -143,7 +143,6 @@ def doCrawling(searchModel):
     number = 1
     createDirectory(searchModel)
     while number < 9 :
-        print('number = ',number)
         
         # 네이버를 향한 Request 생성 and 네이버로부터 response 받기
         response = makeRequestAndGetResponse(number,  searchModel)

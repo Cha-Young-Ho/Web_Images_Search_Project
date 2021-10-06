@@ -1,17 +1,17 @@
 class model():
   title = ''
   price = ''
-  type =''
-  fileName =''
+  data_type =''
+  image_name =''
   link =''
-  filePath = ''
+  image_path = ''
 
   def __init__(self):
-        self.name = '정보 없음'
-        self.type = '정보 없음'
-        self.address = '정보 없음'
+        self.title = '정보 없음'
+        self.data_type = '정보 없음'
+        self.image_name = '정보 없음'
         self.price ='정보 없음'
-        self.filePath = '정보 없음'
+        self.image_path = '정보 없음'
         self.link = '정보 없음'
         
 
@@ -29,28 +29,28 @@ class model():
     
     return self.price
   
-  def setType(self, type):
-        self.type = type
+  def setDataType(self, data_type):
+        self.data_type = data_type
   
-  def getType(self):
+  def getDataType(self):
     
-    return self.type
+    return self.data_type
 
-  def setFileName(self, fileName):
-        self.fileName = fileName
+  def setImageName(self, image_name):
+        self.image_name = image_name
   
-  def getFileName(self):
+  def getImageName(self):
     
-    return self.fileName
+    return self.image_name
   def setLink(self, link):
         self.link = link
   
   def getLink(self):
     
     return self.link
-  def setFilePath(self, filePath):
-        self.filePath = filePath
+  def setImagePath(self, image_path):
+        self.image_path = image_path
   
-  def getFilePath(self):
+  def getImagePath(self):
       
-    return self.filePath
+    return self.image_path
